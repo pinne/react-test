@@ -1,0 +1,5 @@
+export const CREATE = 'counters/CREATE'
+export const DESTROY = 'counters/DESTROY'
+export const INCREMENT = 'counters/INCREMENT'
+export const DECREMENT = 'counters/DECREMENT'
+export const RESET = 'counters/RESET'

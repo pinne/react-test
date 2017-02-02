@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
 
 class Value extends Component {
   render() {
@@ -36,8 +35,4 @@ Value.propTypes = {
   reset: React.PropTypes.func,
 }
 
-const mapStateToProps = (state) => {
-  return state
-}
-
-export default connect(mapStateToProps)(Value)
+export default Value

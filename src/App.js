@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import CounterList from './CounterList'
+import CounterList from './counters/components'
 
 class App extends Component {
   render() {

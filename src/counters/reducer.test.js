@@ -1,20 +1,16 @@
-import React from 'react';
-import ReactDOM, { render } from 'react-dom';
-import { Provider }  from 'react-redux';
-import { createStore } from 'redux';
-import counter from './counter';
+import React from 'react'
+import ReactDOM, { render } from 'react-dom'
+import { Provider }  from 'react-redux'
+import { createStore } from 'redux'
+import reducer from './reducer'
+import * as c from './actions'
 
-const store = createStore(counter);
-const create    = ()   => ({ type: 'CREATE' })
-const destroy   = ()   => ({ type: 'DESTROY' })
-const increment = (id) => ({ type: 'INCREMENT', id: id })
-const decrement = (id) => ({ type: 'DECREMENT', id: id })
-const reset     = (id) => ({ type: 'RESET', id: id })
+const store = createStore(reducer);
 
 it('should create an empty store', () => {
   const stateBefore = {}
   expect(
-    counter(undefined, {})
+    reducer(undefined, {})
   ).toEqual(
     {
       listById: {},
@@ -25,7 +21,7 @@ it('should create an empty store', () => {
 
 it('should add a counter id', () => {
   expect(
-    counter(undefined, create())
+    reducer(undefined, c.create())
   ).toEqual(
     {
       listById: {
@@ -53,7 +49,7 @@ it('should remove a counter id', () => {
     listAllIds: [1, 2],
   }
   expect(
-    counter(stateBefore, destroy())
+    reducer(stateBefore, c.destroy())
   ).toEqual(stateAfter)
 })
 
@@ -73,7 +69,7 @@ it('should increment counter #2', () => {
     listAllIds: [1, 2],
   }
   expect(
-    counter(stateBefore, increment(2))
+    reducer(stateBefore, c.increment(2))
   ).toEqual(stateAfter)
 })
 
@@ -93,7 +89,7 @@ it('should decrement counter #1', () => {
     listAllIds: [1, 2],
   }
   expect(
-    counter(stateBefore, decrement(1))
+    reducer(stateBefore, c.decrement(1))
   ).toEqual(stateAfter)
 })
 
@@ -113,6 +109,6 @@ it('should reset first counter', () => {
     listAllIds: [1, 2],
   }
   expect(
-    counter(stateBefore, reset(1))
+    reducer(stateBefore, c.reset(1))
   ).toEqual(stateAfter)
 })
