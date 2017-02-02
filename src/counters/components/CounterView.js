@@ -1,16 +1,13 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class Value extends Component {
-  render() {
-    const {
-      id,
-      value,
-      increment,
-      decrement,
-      reset,
-    } = this.props
-
-    return (
+const Value = ({
+  id,
+  value,
+  increment,
+  decrement,
+  reset,
+}) => {
+  return (
     <div>
       Counter {id} with value {value}
       <button onClick={increment}>
@@ -23,16 +20,7 @@ class Value extends Component {
         reset
         </button>
     </div >
-    )
-  }
-}
-
-Value.propTypes = {
-  id: React.PropTypes.number,
-  value: React.PropTypes.number,
-  increment: React.PropTypes.func,
-  decrement: React.PropTypes.func,
-  reset: React.PropTypes.func,
+  )
 }
 
 export default Value
