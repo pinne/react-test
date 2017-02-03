@@ -125,7 +125,29 @@ Yes, we need to be just as mindful with normalizations
 and the structure of data, as when designing relational
 databases on the back-end.
 
-### Pls help me understand each change
-Yes, this is what logging helps us with.
+### Pls let me view state changes
+Logging to the rescue!
 
-![Redux Logger](redux_logger.png)
+![Redux Logger](redux-logger.png)
+
+We use the middleware package redux-logger.
+
+```javascript
+import { createStore, applyMiddleware } from 'redux'
+import createLogger from 'redux-logger'
+import rootReducer from './rootReducer'
+
+const logger = createLogger()
+const store = createStore(
+  rootReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+  applyMiddleware(logger)
+)
+
+render(
+  <Provider store={store}>
+    ...
+  </Provider>,
+  document.getElementById('root')
+)
+```
