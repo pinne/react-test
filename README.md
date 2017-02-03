@@ -124,3 +124,8 @@ data received from an API call to the back-end).
 Yes, we need to be just as mindful with normalizations
 and the structure of data, as when designing relational
 databases on the back-end.
+
+### Pls help me understand each change
+Yes, this is what logging helps us with.
+
+![Redux Logger](redux_logger.png)
