@@ -101,3 +101,26 @@ const counter = combineReducers({
   listById: byId,
 })
 ```
+
+Ending up with a store which looks like:
+
+```json
+{
+  "counters": {
+    "listAllIds": [ 1, 2 ],
+    "listById": {
+      "1": { "value": 42 },
+      "2": { "value": -1 }
+    }
+  }
+}
+```
+
+When working with deeply nested data structures, the
+[normalizr](https://github.com/paularmstrong/normalizr)
+library is good for parsing complicated data (i.e. 
+data received from an API call to the back-end).
+
+Yes, we need to be just as mindful with normalizations
+and the structure of data, as when designing relational
+databases on the back-end.
