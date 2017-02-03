@@ -14,7 +14,6 @@ class CounterList extends Component {
           {
             this.props.counters.listAllIds.map(
               id => {
-                console.log(id)
                 return (
                   <CounterView
                     key={id}

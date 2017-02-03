@@ -30,4 +30,5 @@ Value.propTypes = {
   decrement: React.PropTypes.func,
   reset:     React.PropTypes.func,
 }
+
 export default Value
