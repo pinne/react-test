@@ -13,7 +13,7 @@ of Redux application. [Three Rules For Structuring (Redux)
 Applications](https://jaysoo.ca/2016/02/28/organizing-redux-application/)
 
 ### Bumps in the road
-Soon enough I ended up with a nested store, and by reducer
+Soon enough I ended up with a nested store, and my reducer
 looked like shit.
 
 ```javascript
