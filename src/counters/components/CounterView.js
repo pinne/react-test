@@ -6,19 +6,23 @@ const Value = ({
   increment,
   decrement,
   reset,
+  incrementAsync,
 }) => {
   return (
     <div>
       Counter {id} with value {value}
       <button onClick={increment}>
         +
-        </button>
+      </button>
       <button onClick={decrement}>
         -
-        </button>
+      </button>
       <button onClick={reset}>
         reset
-        </button>
+      </button>
+      <button onClick={incrementAsync}>
+        Async +
+      </button>
     </div >
   )
 }

@@ -22,6 +22,7 @@ class CounterList extends Component {
                     increment={() => this.props.onIncrement(id)}
                     decrement={() => this.props.onDecrement(id)}
                     reset={() => this.props.onReset(id)}
+                    incrementAsync={() => this.props.onIncrementAsync(id)}
                   />
                 )
               }
@@ -54,6 +55,9 @@ const mapDispatchToProps = (dispatch) => {
     },
     onReset: (id) => {
       dispatch(c.reset(id))
+    },
+    onIncrementAsync: (id) => {
+      dispatch(c.incrementAsync(id))
     },
   }
 }
