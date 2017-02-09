@@ -28,7 +28,7 @@ class CounterList extends Component {
               }
             )
           }
-          <pre>{JSON.stringify(this.props, null, 2)}</pre>
+          <pre>{JSON.stringify(this.props.counters, null, 2)}</pre>
         </div>
       </div>
     )

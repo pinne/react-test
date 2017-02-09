@@ -11,6 +11,7 @@ const Value = ({
   return (
     <div>
       Counter {id} with value {value}
+
       <button onClick={increment}>
         +
       </button>

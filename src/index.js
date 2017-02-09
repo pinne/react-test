@@ -7,7 +7,7 @@ import createSagaMiddleware from 'redux-saga'
 
 import App from './App'
 import rootReducer from './rootReducer'
-import rootSaga from './counters/sagas'
+import rootSaga from './rootSaga'
 
 const logger = createLogger()
 const sagaMiddleware = createSagaMiddleware()
