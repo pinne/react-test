@@ -8,22 +8,36 @@ class Weather extends Component {
       value: 'Stockholm'
     }
     this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleChange(event) {
     this.setState({value: event.target.value})
   }
 
+  handleSubmit(event) {
+    this.props.onFetch(this.state.value)
+    event.preventDefault()
+  }
+
   render() {
     return (
       <div>
         <h4>Weather</h4>
+          {this.props.value}
+          <form
+            onSubmit={this.handleSubmit}>
           <input
             type="text"
+            ref="city"
             value={this.state.value}
             onChange={this.handleChange}
           />
-          <button onClick={this.props.onFetch}>Fetch</button>
+          <input
+            type="submit"
+            value="Fetch"
+          />
+          </form>
         <pre>
           {
             JSON.stringify(this.props.weather, null, 2)
@@ -40,10 +54,10 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    onFetch: (e) => {
+    onFetch: (city) => {
       dispatch({
         type: 'FETCH_DATA_REQUEST',
-        payload: event.target.value
+        payload: city
       })
     }
   }
