@@ -12,7 +12,7 @@ class Weather extends Component {
   }
 
   handleChange(event) {
-    this.setState({value: event.target.value})
+    this.setState({ value: event.target.value })
   }
 
   handleSubmit(event) {
@@ -24,9 +24,9 @@ class Weather extends Component {
     return (
       <div>
         <h4>Weather</h4>
-          {this.props.value}
-          <form
-            onSubmit={this.handleSubmit}>
+        {this.props.value}
+        <form
+          onSubmit={this.handleSubmit}>
           <input
             type="text"
             ref="city"
@@ -37,7 +37,7 @@ class Weather extends Component {
             type="submit"
             value="Fetch"
           />
-          </form>
+        </form>
         <pre>
           {
             JSON.stringify(this.props.weather, null, 2)
