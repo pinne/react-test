@@ -11,9 +11,9 @@ function get(city) {
 }
 
 function* callGetData(action) {
-  const postId = action.payload
+  const city = action.payload
   const { data, timeout } = yield race({
-    data: call(get, postId),
+    data: call(get, city),
     timeout: call(delay, 1000)
   })
 
@@ -22,7 +22,7 @@ function* callGetData(action) {
       type: 'FETCH_DATA_SUCCESS',
       payload: data
     })
-  } else {
+  } else if (timeout) {
     yield put({
       type: 'FETCH_DATA_ERROR'
     })
