@@ -8,6 +8,7 @@ import createSagaMiddleware from 'redux-saga'
 import App from './App'
 import rootReducer from './rootReducer'
 import rootSaga from './rootSaga'
+import 'purecss/build/pure-min.css'
 
 const logger = createLogger()
 const sagaMiddleware = createSagaMiddleware()
